@@ -5,9 +5,9 @@
   
 2. Pomocou GA navrhnite dva samostatné PID regulátory pre riadenie oboch výstupov MIMO systému analogickým postupom, ako v minulom zadaní. Skokové zmeny žiadanej hodnoty pre druhý subsystém voľte v iných časoch a v iných hodnotách ako boli, zadané pre prvý subsystém. Zobrazte priebeh evolúcie aj výsledné grafy priebehu regulácie pre oba subsystémy.
 
-<img width="1387" height="1208" alt="image" src="https://github.com/user-attachments/assets/870c96e7-1fc8-46be-9bc4-8ca735de66d7" />
+<img width="883" height="748" alt="image" src="https://github.com/user-attachments/assets/a8d7f3be-e05a-4668-a65e-8499c0604fc3" />
 
-<img width="1946" height="1014" alt="image" src="https://github.com/user-attachments/assets/b82ed0b7-1980-493a-b84e-b642a9f3074c" />
+<img width="1254" height="584" alt="image" src="https://github.com/user-attachments/assets/36ccdfaa-12aa-4ddc-aecc-72bc8be3ad88" />
 
 <img width="1057" height="617" alt="image" src="https://github.com/user-attachments/assets/a38989f7-8f12-49d7-8080-b6b6c6843a89" />
 
