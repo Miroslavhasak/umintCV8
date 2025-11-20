@@ -8,14 +8,14 @@ sim_name = ['cv8_sim'];
 set_param(sim_name,'FastRestart','on');
 
 tic
-numgen=30	;% number of generations
-lpop=30;	% number of chromosomes in population
-lstring=6;	% number of genes in a chromosome       
+numgen=30;      % number of generations
+lpop=30;	    % number of chromosomes in population
+lstring=6;	    % number of genes in a chromosome       
 M=10000;          % maximum of the search space
 
 
 %parameters
-a = 4; 
+a = 10; 
 b = 2.3;
 c = 0.0138;
 
@@ -24,7 +24,6 @@ Space=[zeros(1,lstring); ones(1,lstring)*M];
 Delta=Space(2,:)/100;   
 
 Pop=genrpop(lpop,Space);
-%evolutions=zeros(1,numgen);
 
 Fit = [];
 Fit_a = [];
@@ -32,6 +31,10 @@ Fit_b = [];
 Fit_c = [];
 
 for gen=1:numgen
+
+    Fit_1 = zeros(1, lpop);   
+    Fit_2 = zeros(1, lpop);   
+    Fit   = zeros(1, lpop);  
 
     for j=1:lpop
         disp(gen+"/"+numgen+" "+ j)
@@ -101,50 +104,25 @@ D1 = Best(1,6);
 
 
 figure
-% pre hodnoty a
-a0=1.1; a1=1.9; a2=1; b0=0.1; b1=0; c0=0.8;
-out=sim(sim_name);
-ya = out.y.Data;
-plot(out.y.Data,'r');
 hold on
-
-% pre hodnoty b
-a0=1.4; a1=2; a2=1; b0=0.2; b1=0; c0=0.8;
 out=sim(sim_name);
-yb = out.y.Data;
-plot(out.y.Data,'g');
-
-
-a0=1.1; a1=0.01; a2=4; b0=0.1; b1=0; c0=0.8;
-out=sim(sim_name);
-yc = out.y.Data;
 plot(out.y.Data,'b');
+plot(out.y1.Data,'g');
 plot(out.w.Data,'k');
+plot(out.w1.Data,'k');
 title('priebeh regulovanej veliciny');
 hold off
 
 figure
-% pre hodnoty a
-a0=1.1; a1=1.9; a2=1; b0=0.1; b1=0; c0=0.8;
-out=sim(sim_name);
-ua = out.u.Data;
-plot(ua,'r');
+u1 = out.u1.Data;
 hold on
-
-% pre hodnoty b
-a0=1.4; a1=2; a2=1; b0=0.2; b1=0; c0=0.8;
-out=sim(sim_name);
-ub = out.u.Data;
-plot(ub,'g');
-
-% pre hodnoty c
-a0=1.1; a1=0.01; a2=4; b0=0.1; b1=0; c0=0.8;
 out=sim(sim_name);
 uc = out.u.Data;
 plot(uc,'b');
+plot(u1,'g');
 title('akcny zasah');
 
 set_param(sim_name,'FastRestart','off');
 
-% Best parameters >> P: 3481.9972 I: 1150.6154 D: 308.9246 
-% Best parameters >> P1: 7564.2164 I1: 68.9133 D1: 628.8311 
+% Best parameters >> P: 3693.3618 I: 41.3025 D: 421.1671 
+% Best parameters >> P1: 9233.5110 I1: 172.9441 D1: 1249.3716 
